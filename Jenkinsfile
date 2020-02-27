@@ -3,13 +3,13 @@ pipeline {
     stages{
        stage(message){
          steps {
-             echo "HelloWorld"
+             echo "This dev"
          }
        
        }
        stage(message2){
            steps {
-              echo "Helloworld2"
+              echo "dev completed"
            }
        
        }

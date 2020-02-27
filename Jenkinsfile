@@ -14,10 +14,11 @@ pipeline {
        
        }
        stage(clone){
-           git clone "https://github.com/dev-lx/helloworld.git"
-           sh "ls"
+           steps{
+               git clone "https://github.com/dev-lx/helloworld.git"
+               sh "ls"
        }
-
+       }
     
     }
 

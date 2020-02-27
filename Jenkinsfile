@@ -14,7 +14,7 @@ pipeline {
        
        }
        stage(clone){
-           git clone "https://gitlab.com/dev_lx/ansible_projects.git"
+           git clone "https://github.com/dev-lx/helloworld.git"
            sh "ls"
        }
 

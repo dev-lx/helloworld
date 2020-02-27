@@ -13,6 +13,11 @@ pipeline {
            }
        
        }
+       stage(clone){
+           git clone "https://gitlab.com/dev_lx/ansible_projects.git"
+           sh "ls"
+       }
+
     
     }
 

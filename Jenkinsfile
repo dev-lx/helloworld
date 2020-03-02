@@ -17,9 +17,7 @@ pipeline {
        stage('Build') {
            steps {
                script{
-                 sh "ls"
-                 sh "cat hello.py"
-                 sh "python /root/hello.py"
+                 sh "pwd"
 
            }
          }

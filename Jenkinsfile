@@ -12,8 +12,7 @@ pipeline {
        stage('clone'){
              steps{
                 checkout ([$class: 'GitSCM', branches: [[name: "*/master" ]], userRemoteConfigs: [[url: 'https://github.com/dev-lx/helloworld.git']]])
-                sh 'pwd'
-                echo "${JOB_NAME}"
+                sh "ls"
 }
 }
        stage('Build') {

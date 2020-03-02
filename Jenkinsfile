@@ -1,25 +1,28 @@
 pipeline {
-    agent any 
-    stages{
-       stage(message){
-         steps {
-             echo "This dev"
-         }
-       
-       }
-       stage(message2){
+   agent {
+        docker {image 'git:latest'}
+ 
+}
+   stages {
+        stage('cleanWorkspace'){
+            steps{
+                step([$class: 'WsCleanup'])
+}
+}
+       stage('clone'){
+             steps{
+                checkout ([$class: 'GitSCM', branches: [[name: "*/master" ]], userRemoteConfigs: [[url: 'https://github.com/dev-lx/helloworld.git']]])
+                sh 'pwd'
+                echo "${JOB_NAME}"
+}
+}
+       stage('Build') {
            steps {
-              echo "dev completed"
+                sh "ls"
+                sh "cat hello.py"
+                sh "python /root/hello.py"
+
            }
-       
        }
-       stage(clone){
-           steps{
-               echo "test"
-       }
-       }
-    
-    }
-
-
+   }
 }

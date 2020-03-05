@@ -17,6 +17,7 @@ pipeline {
               test2: {
                 sh '''
                    echo "This is test2"
+                   echo "$WORKSPACE"
                 '''
 
 }

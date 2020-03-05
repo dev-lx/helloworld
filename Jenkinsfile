@@ -3,13 +3,22 @@ pipeline {
     stages{
        stage(message){
          steps {
-             echo "This dev"
+             echo "This is parallel Job"
          }
        
        }
-       stage(message2){
+       stage('imagebuild'){
            steps {
-              echo "dev completed"
+              parallel test1: {
+                sh '''
+                    echo "This is test1"
+                '''
+},
+             test2: {
+                sh '''
+                   echo "This is test2"
+
+}
            }
        
        }

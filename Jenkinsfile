@@ -14,7 +14,7 @@ pipeline {
                     echo "This is test1"
                 '''
 },
-             test2: {
+              test2: {
                 sh '''
                    echo "This is test2"
 
